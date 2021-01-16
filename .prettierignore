@@ -1,0 +1,14 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+web-build/
+web-report/
+package-lock.json
+
+# macOS
+.DS_Store
+
+lib/ezwn-ux-native
+lib/ezwn-storage-native
+lib/ezwn-react-app
+lib/ezwn-react-app-ux-native

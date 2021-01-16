@@ -1,0 +1,38 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "react": "~17.0.1",
+    "react-dom": "~17.0.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
+    "expo": "~40.0.0",
+    "expo-location": "~10.0.0",
+    "react-native-web": "~0.14.10",
+    "react-native-svg": "^12.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-native-fontawesome": "^0.2.6",
+    "@react-native-async-storage/async-storage": "github:react-native-async-storage/async-storage",
+    "react-router": "^5.1.2",
+    "react-router-native": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "babel-preset-expo": "~8.1.0",
+    "husky": "^4.2.5",
+    "pretty-quick": "^2.0.1",
+    "prettier": "2.0.5"
+  },
+  "private": true
+}

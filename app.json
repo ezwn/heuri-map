@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Heuristic",
+    "slug": "heuristic",
+    "platforms": ["android", "web"],
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon-192.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "ezwn.heuristic",
+      "versionCode": 1
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "build": {
+        "babel": {
+          "include": ["react-router-native"]
+        }
+      }
+    }
+  }
+}
