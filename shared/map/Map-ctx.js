@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { useStorage } from "ezwn-storage-native/JSONAsyncStorage";
 import { mock } from "./mock";
+import { useMapIndex } from "shared/map-index/MapIndex-ctx";
 
 // const map = "spring-rest";
 const map = "spring-rest";
-
-const STORAGE_KEY = "heuri-map-" + map;
 
 const MapContext = React.createContext();
 
@@ -21,7 +20,11 @@ export function generateId(length = 10) {
 }
 
 export const MapProvider = ({ children }) => {
-  const [map, setMap, loaded] = useStorage(STORAGE_KEY, () => mock);
+  const { currentMap } = useMapIndex();
+  const [map, setMap, loaded] = useStorage(
+    `heuri-map-mapdata-${currentMap}`,
+    () => mock
+  );
 
   // Map
   // ---
