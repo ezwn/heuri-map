@@ -26,13 +26,6 @@ export const MapProvider = ({ children }) => {
     () => mock
   );
 
-  // Map
-  // ---
-
-  const getMapData = () => {
-    return map;
-  };
-
   // Rects
   // -----
 
@@ -115,7 +108,7 @@ export const MapProvider = ({ children }) => {
   return loaded ? (
     <MapContext.Provider
       value={{
-        getMapData,
+        mapData: map,
         updateRect,
         createRect,
         deleteRect,

@@ -35,8 +35,7 @@ export const LinkOverlay = ({ points, lines, id: linkId }) => {
     size: [, viewportHeight],
     toViewportPoint
   } = useViewport();
-  const { getMapData, deleteLink } = useMap();
-  const mapData = getMapData();
+  const { mapData, deleteLink } = useMap();
 
   let xMax = 0,
     yMin = viewportHeight;
@@ -67,8 +66,7 @@ export const LinkOverlay = ({ points, lines, id: linkId }) => {
 
 const LinkPoint = ({ point, linkId }) => {
   const { toViewportPoint, fromViewportPoint } = useViewport();
-  const { getMapData, updateLinkPoint } = useMap();
-  const mapData = getMapData();
+  const { mapData, updateLinkPoint } = useMap();
 
   const {
     motionTranslation,
@@ -126,7 +124,7 @@ export const LineRep = ({
 }) => {
   const { toViewportPoint } = useViewport();
   const { onPress } = useSelection();
-  const mapData = useMap().getMapData();
+  const { mapData } = useMap();
 
   const point1 = points.find((point) => point.id === point1Id);
   const point2 = points.find((point) => point.id === point2Id);

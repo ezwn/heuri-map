@@ -22,8 +22,8 @@ export const MapComponent = () => {
     size: [viewportWidth, viewportHeight],
     onLayout
   } = useViewport();
-  const { getMapData } = useMap();
-  const { rects, links } = getMapData();
+  const { mapData } = useMap();
+  const { rects, links } = mapData;
 
   const { createRect } = useMap();
 
