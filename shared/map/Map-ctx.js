@@ -3,9 +3,6 @@ import { useStorage } from "ezwn-storage-native/JSONAsyncStorage";
 import { mock } from "./mock";
 import { useMapIndex } from "shared/map-index/MapIndex-ctx";
 
-// const map = "spring-rest";
-const map = "spring-rest";
-
 const MapContext = React.createContext();
 
 const chars = "ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789";
@@ -41,6 +38,8 @@ export const MapProvider = ({ children }) => {
       ...map,
       rects: [...map.rects, rect]
     });
+
+    return rect;
   };
 
   const updateRect = (rectId, key, value) => {

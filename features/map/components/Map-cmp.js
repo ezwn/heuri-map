@@ -35,7 +35,11 @@ export const MapComponent = () => {
       event.preventDefault();
 
       const { clientX, clientY } = event;
-      createRect(clientX / viewportWidth, clientY / viewportHeight);
+      const newRect = createRect(
+        clientX / viewportWidth,
+        clientY / viewportHeight
+      );
+      setSelection([newRect.id]);
     } else {
       startDragging(event, mapId);
       setSelection([]);
