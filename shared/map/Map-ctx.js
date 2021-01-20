@@ -105,6 +105,8 @@ export const MapProvider = ({ children }) => {
       ...map,
       links: [...map.links, newLink]
     });
+
+    return newLink;
   };
 
   //

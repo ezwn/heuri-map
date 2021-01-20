@@ -177,7 +177,7 @@ export const RectEditionOverlay = ({ label, bounds, id }) => {
   );
   const [x, y, width, height] = projectedBounds;
 
-  const { selection } = useSelection();
+  const { selection, setSelection } = useSelection();
 
   const onLabelChanged = (newLabel) => {
     setNewLabel(newLabel);
@@ -201,7 +201,10 @@ export const RectEditionOverlay = ({ label, bounds, id }) => {
       {selection.length > 1 && (
         <LinkIconOverlay
           location={[width - 40, 0]}
-          onActivate={() => createLink(selection)}
+          onActivate={() => {
+            const newLink = createLink(selection);
+            setSelection([newLink.id]);
+          }}
         />
       )}
       <DraggablePointOverlay
