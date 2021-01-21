@@ -4,7 +4,7 @@ import { VerticalBorderLayout } from "ezwn-ux-native/layouts/VerticalBorderLayou
 import { TitleBar } from "ezwn-ux-native/app-components/TitleBar-cmp";
 import { MapComponent } from "./components/Map-cmp";
 import { TouchMotionProvider } from "./contexts/TouchMotion-ctx";
-import { ViewportProvider } from "shared/viewport/Viewport-ctx";
+import { ViewportProvider } from "features/map/contexts/Viewport-ctx";
 import { SelectionProvider } from "./contexts/Selection-ctx";
 
 export const MapRoot = () => {

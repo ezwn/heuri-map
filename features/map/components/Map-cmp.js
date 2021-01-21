@@ -1,8 +1,9 @@
 import React from "react";
 import { useMap } from "shared/map/Map-ctx";
 import Svg from "react-native-svg";
-import { useViewport } from "shared/viewport/Viewport-ctx";
-import { LinkOverlay, LinkRep } from "./LinkRep-cmp";
+import { useViewport } from "features/map/contexts/Viewport-ctx";
+import { LinkSvg } from "./LinkSvg-cmp";
+import { LinkOverlay } from "./LinkOverlay-cmp";
 import { useTouchMotion } from "../contexts/TouchMotion-ctx";
 import { View } from "react-native";
 import { RectOverlay } from "./RectOverlay-cmp";
@@ -63,7 +64,7 @@ export const MapComponent = () => {
         style={{ backgroundColor: "rgb(220,220,220)", position: "absolute" }}
       >
         {links.map((link) => (
-          <LinkRep key={link.id} {...link} />
+          <LinkSvg key={link.id} {...link} />
         ))}
       </Svg>
       {rects.map((rect) => (

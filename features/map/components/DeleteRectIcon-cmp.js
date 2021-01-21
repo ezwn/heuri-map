@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import { stopEvent } from "shared/stopEvent";
 
-export const DeleteIconOverlay = ({ location, onActivate }) => {
+export const DeleteRectIcon = ({ location, onActivate }) => {
   const onPress = (event) => {
     stopEvent(event);
     onActivate();

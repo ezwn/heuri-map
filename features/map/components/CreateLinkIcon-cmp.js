@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { stopEvent } from "shared/stopEvent";
 
-export const LinkIconOverlay = ({ location, onActivate }) => {
+export const CreateLinkIcon = ({ location, onActivate }) => {
   const onPress = (event) => {
     stopEvent(event);
     onActivate();

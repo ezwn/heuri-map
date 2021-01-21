@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useMap } from "shared/map/Map-ctx";
 import { Text, TextInput, View } from "react-native";
-import { useViewport } from "shared/viewport/Viewport-ctx";
+import { useViewport } from "features/map/contexts/Viewport-ctx";
 import { useTouchMotion } from "../contexts/TouchMotion-ctx";
 import {
   boundsIncreaseWidth,
   boundsTranslate,
   boundsCenterRefFrameToLeftTopRefFrame,
   boundsIncreaseHeight
-} from "../geom";
-import { DraggablePointOverlay } from "./DraggablePoint-cmp";
-import { DeleteIconOverlay } from "./DeleteIcon-cmp";
-import { LinkIconOverlay } from "./LinkIcon-cmp";
+} from "../utils/geom";
+import { DraggablePointOverlay } from "./DraggablePointOverlay-cmp";
+import { DeleteRectIcon } from "./DeleteRectIcon-cmp";
+import { CreateLinkIcon } from "./CreateLinkIcon-cmp";
 import { useSelection } from "../contexts/Selection-ctx";
 
 const computeRectStyle = (selected = false, edited = false) => {
@@ -194,12 +194,9 @@ export const RectEditionOverlay = ({ label, bounds, id }) => {
 
   return (
     <>
-      <DeleteIconOverlay
-        location={[width, 0]}
-        onActivate={() => deleteRect(id)}
-      />
+      <DeleteRectIcon location={[width, 0]} onActivate={() => deleteRect(id)} />
       {selection.length > 1 && (
-        <LinkIconOverlay
+        <CreateLinkIcon
           location={[width - 40, 0]}
           onActivate={() => {
             const newLink = createLink(selection);
