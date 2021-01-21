@@ -24,11 +24,10 @@ export const MapComponent = () => {
     onLayout
   } = useViewport();
   const { mapData } = useMap();
-  const { rects, links } = mapData;
-
   const { createRect } = useMap();
-
   const { setSelection } = useSelection();
+
+  const { rects, links } = mapData;
 
   const onPressIn = (event) => {
     if (draggedElementId === mapId) {
@@ -40,7 +39,11 @@ export const MapComponent = () => {
         clientX / viewportWidth,
         clientY / viewportHeight
       );
-      setSelection([newRect.id]);
+      if (newRect) {
+        setSelection([newRect.id]);
+      } else {
+        console.error("Something went wrong with rectangle creation");
+      }
     } else {
       startDragging(event, mapId);
       setSelection([]);

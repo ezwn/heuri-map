@@ -79,11 +79,23 @@ export const MapProvider = ({ children }) => {
   };
 
   const createLink = (selection) => {
+    const { rects } = map;
+
+    // checking pre-conditions
+    const relevantSelectionElements = selection.filter((rectId) =>
+      rects.find((r) => r.id === rectId)
+    );
+
+    if (relevantSelectionElements.length !== 2) {
+      return;
+    }
+
+    // creating link
     const id = "link-" + generateId();
 
     const newLink = {
       id: id,
-      points: selection.map((rectId, i) => ({
+      points: relevantSelectionElements.map((rectId, i) => ({
         id: id + "-point-" + i,
         ref: rectId,
         location: [0.0, 0.0]

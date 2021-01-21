@@ -200,7 +200,11 @@ export const RectEditionOverlay = ({ label, bounds, id }) => {
           location={[width - 40, 0]}
           onActivate={() => {
             const newLink = createLink(selection);
-            setSelection([newLink.id]);
+            if (newLink) {
+              setSelection([newLink.id]);
+            } else {
+              console.error("Something went wrong with createLink", selection);
+            }
           }}
         />
       )}
